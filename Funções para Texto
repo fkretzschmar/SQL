@@ -1,0 +1,47 @@
+#(LOWER) - Transforma todo o texto do campo em letra minuscula.
+
+
+#(UPPER) - Transforma todo o texto do campo em letra maiuscula.
+
+
+#(INITCAP) - Transforma a primeira letra de toda palavra do texto em maiuscula.
+
+
+#(CONCAT(char1, char2)) - Juntar dois elementos, exemplo se possui uma coluna com o nome e outra com o sobrenome,
+                          podemos juntar as duas com a função CONTAT.
+
+
+#(LPAD) - Se quisermos que um elemento tenha o tamanho 40 e tiver um texto com o tamanho 25, LPAD vai colocar 15 espaços vazios
+          para completar o tamanho de 40, os 15 espaços vazios serão inseridos no lado esquerdo do texto.
+SELECT nome_do_produto LPAD(nome_do_produto, 40, '*') FROM tabela_de_produtos;
+
+
+#(RPAD) - RPAD é a mesma coisa que LPAD mais ao invés de inserir os espaços vazios na esquerda sera inserido na direita.
+SELECT nome_do_produto RPAD(nome_do_produto, 40, '*') FROM tabela_de_produtos;
+
+
+#(SUBSTR) - Serve para tirar parte de um texto que faz parte de um texto maior.
+SELECT nome_do_produto, SUBSTR(nome_do_produto, 3, 5)FROM tabela_de_produtos;
+Obs:Vai tirar do campo 3 até o 5 e criar uma coluna.
+
+
+#(INSTR) - Verifica se na coluna possui algum parametro informado, exemplo se tem o nome Silva, e tera como retorno 0 ou 1.
+SELECT nome FROM tabela_de_clientes WHERE INSTR(nome, 'Mattos') <> 0;
+Obs:Vai trazer todos que tem o nome Mattos.
+
+#(LTRIM) - Tira os espaços em branco no inicio do texto.
+
+
+#(RTRIM) - Tira os espaços em branco no final do texto.
+
+
+#(TRIM) - Tira os espaços em branco tanto da esquerta quanto da direita.
+
+
+#(TRANSLATE) - Digamos que precisamos tirar a letra B e substituila por X, conseguimos utilizando o TRANSLATE.
+
+
+#(REPLACE) - É a mesma coisa que TRANSLATE mais substitui palavras, exemplo substituir o sobrenome Silva por Mendes.
+SELECT nome_do_produto, REPLACE(nome_do_produto, 'Litro', 'L') FROM tabela_de_produtos;
+Obs:Alguns ficaram 'Ls'.
+SELECT nome_do_produto, PEPLACE(REPLACE(nome_do_produto, 'Litro', 'L'), 'Ls', 'L') FROM tabela_de_produtos;
