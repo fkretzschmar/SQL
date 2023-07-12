@@ -52,12 +52,3 @@ criando uma coluna que informa se o mesmo é cliente ou vendedor.
 
     SELECT * FROM tabela_de_clientes WHERE bairro IN (SELECT DISTINCT bairro FROM tabela_de_vendedores);
 
-#Subconsulta substituindo o HAVING, somando todas embalagens.
-
-    SELECT soma_embalagens.embalagem, soma_embalagem.soma_preco
-    FROM (SELECT embalagem, SUM(preco_de_lista) AS soma_preco FROM tabela_de_produtos GROUP BY embalagem) soma_embalagem
-    WHERE soma_embalagens.soma_preco >= 80;
-
-#Consulta uma View não precida da função HAVING(nome da view vw_soma_embalagens).
-
-    SELECT embalagem, soma_preco FROM vw_soma_embalagens WHERE soma_preco >= 80;
