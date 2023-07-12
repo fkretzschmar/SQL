@@ -4,3 +4,15 @@
     SELECT embalagem, SUM(preco_de_lista) AS soma_preco
     FROM tabela_de_produtos GROUP BY embalagem;
 
+#Consulta uma View não precida da função HAVING(nome da view vw_soma_embalagens).
+
+    SELECT embalagem, soma_preco FROM vw_soma_embalagens WHERE soma_preco >= 80;
+
+#Consulta todas as PETS utilizando uma view.
+
+    SELECT * FROM
+        tabela_de_produtos tp
+    INNER JOIN
+        vw_soma_embalagens vw
+    ON tp.embalagem = vw.embalagens
+    WHERE vw.soma_preco >=80;
