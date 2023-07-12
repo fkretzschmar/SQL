@@ -1,0 +1,6 @@
+#Criando uma View nome da view: vw_soma_embalagens.
+
+    CREATE VIEW vw_soma_embalagens AS
+    SELECT embalagem, SUM(preco_de_lista) AS soma_preco
+    FROM tabela_de_produtos GROUP BY embalagem;
+
