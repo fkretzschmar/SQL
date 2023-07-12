@@ -1,0 +1,63 @@
+#Consulta entre duas tabelas que possuem mesmo nome na coluna.
+
+
+                                                                                                                                                                                
+                      Tipo 1                                    |                           Tipo 2                                                        
+                                                                |                                                                                  
+  SELECT CLIENTE.CIDADE                                         |               SELECT C.CIDADE                                                                         
+         CLIENTE.ESTADO                                         |                      C.ESTADO                                                              
+         MOVIMENTO.DATA                                         |                      M.DATA                                                       
+         MOVIMENTO.VALOR_VENDA                                  |                      M.VALOR_VENDA                                                                    
+   FROM                                                         |                FROM
+               MOVIMENTO                                        |                           MOVIMENTO M                                                                 
+      INNER JOIN                                                |                   INNER JOIN                                                                       
+               CLIENTE                                          |                           CLIENTE C                                                         
+      ON CLIENTE.CLIENTE = MOVIMENTO.CLIENTE                    |                   ON C.CLIENTE = M.CLIENTE                                                                     
+                                                                                                                                                                     
+                                                                                                                                               
+                                                                                                                                             
+#Consultar na planilha do lado esquerdo os nulos.
+
+    SELECT DISTINCT
+    TC.CPF AS CPF_DO_CADASTRO,
+    TC.NOME AS NOME_DO_CLIENTE
+    FROM
+        TABELA_DE_CLIENTES TC
+    LEFT JOIN
+        NOTAS_FISCAIS NF
+    ON TC.CPF = NF.CPF
+    WHERE NF.CPF IS NULL;
+
+#Consulta quais são os vendedores que não possui sede no bairro do cliente.
+
+    SELECT DISTINCT
+    TV.NOME AS NOME_DO_VENDEDOR,
+    TV.BAIRRO AS BAIRRO_DO_VENDEDOR,
+    TC.NOME AS NOME_DO_CLIENTE,
+    TC.BAIRRO AS BAIRRO_DO_CLIENTE
+    FROM
+        TABELA_CLIENTE TC
+    RIGHT JOIN
+        TABELA_DE_VENDEDORES TV
+    ON TV.BAIRRO = TC.BAIRRO;
+
+#Consulta entre duas tabelas verificando o bairro dos clientes e vendedores, 
+criando uma coluna que informa se o mesmo é cliente ou vendedor.
+
+    SELECT DISTINCT bairro, 'CLIENTE' AS ORIGEM FROM tabela_de_clientes
+      UNION ALL
+    SELECT DISTINCT bairro, 'VENDEDOR' AS ORIGEM FROM tabela_de_vendedores;
+
+#Consulta de vendedor que possue sede no mesmo bairro do cliente de maneira dinãmica e menor.
+
+    SELECT * FROM tabela_de_clientes WHERE bairro IN (SELECT DISTINCT bairro FROM tabela_de_vendedores);
+
+#Subconsulta substituindo o HAVING, somando todas embalagens.
+
+    SELECT soma_embalagens.embalagem, soma_embalagem.soma_preco
+    FROM (SELECT embalagem, SUM(preco_de_lista) AS soma_preco FROM tabela_de_produtos GROUP BY embalagem) soma_embalagem
+    WHERE soma_embalagens.soma_preco >= 80;
+
+#Consulta uma View não precida da função HAVING(nome da view vw_soma_embalagens).
+
+    SELECT embalagem, soma_preco FROM vw_soma_embalagens WHERE soma_preco >= 80;
