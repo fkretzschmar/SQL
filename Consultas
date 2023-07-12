@@ -1,0 +1,70 @@
+#Consulta de dados em campos data por mês, ano ou dia.
+
+    SELECT * FROM tb_clientes WHERE TO_CHAR(data_nascimento, 'MM') = 9;
+
+#Consulta entre dois valores(EXP: Da idade x até y).
+
+    SELECT * FROM tabela_de_clientes WHERE idade BETWEEN 19 AND 22;
+
+#Consultar uma coluna com mais de uma definição.
+
+    SELECT * FROM tabela_de_produtos WHERE sabor IN ('Manga', 'Laranja', 'Melancia');
+
+#Consultar coluna informando parte de um texto EXP('Morango/Limão', 'Limão', 'Limão/Uva'),
+preciso consultar todos sucos que contem Limão.
+
+    SELECT * FROM tabela_de_produtos WHERE SABOR LIKE '%Limão%';
+
+#Consulta de dados evitando valores repetidos.
+
+    SELECT DISTINCT CIDADE, ESTADO FROM tabela_clientes;
+
+#Consultar uma grande tabela e escolher a quantidade de linhas deseja visualizar.
+
+    SELECT * FROM tabela_clientes WHERE ROWNUM <=4;
+
+#Consulta tabela classificando coluna com valores ascendentes ou descendentes.
+
+    SELECT * FROM tabela_de_produtos ORDER BY preco_de_lista ASC;
+    SELECT * FROM tabela_de_produtos ORDER BY preco_de_lista DESC;
+
+#Consulta na tabela clientes agrupando a coluna cidade e somando a idade de todos os clientes.
+
+    SELECT cidade, SUM(idade) FROM tabela_de_clientes GROUP BY cidade ORDER BY cidade;
+
+#Consultar na coluna embalagem qual é a embalagem que possui o valor maior de cada tipo(Garrafa, Pet, Lata).
+
+    SELECT embalagem, MAX(preco_de_lista) FROM tabela_de_produtos GROUP BY embalagem;
+
+#Consultar a quantidade de cada tipo de embalagem em uma coluna.
+
+    SELECT embalagem, COUNT(*) FROM tabela_de_produtos GROUP BY embalagem ORDER BY embalagem;
+
+#Consultar em cada tipo de embalagem, a quantidade de sabor do tipo laranja, possui em cada tipo de embalagem.
+
+    SELECT embalagem, COUNT(*) FROM tabela_de_produtos WHERE sabor = 'Laranja' GROUP BY embalagem ORDER BY embalagem;
+
+#Consultar dentro de um agrupamento  o maior valor.
+
+    SELECT estado, SUM(limite_de_credito) FROM tabela_de_clientes GROUP BY estado HAVING SUM (limite_de_credito) >= 900000;
+
+#Consultar em cada tipo de embalagem(Garrafa, Pet, Lata), qual é o maior e menor valor de cada tipo de embalagem.
+
+    SELECT embalagem, MAX(preco_de_lista) AS maior_preco, MIN(preco_de_lista) AS menor_preco 
+      FROM tabela_de_produtos GROUP BY embalagem;
+
+#Consultar em cada tipo de embalagem(Garrafa, Pet, Lata), qual é o maior e menor valor de cada tipo de embalagem,
+informando um valor de inicio.
+
+    SELECT embalagem, MAX(preco_de_lista) AS preco_maior, MIN(preco_de_lista) AS preco_menor FROM tabela_de_produtos
+      WHERE preco_de_lista >= 10 GROUP BY embalagem;
+
+#Consultar o valor total de vendas filtrando a orden da maior venda para a menor.
+
+    SELECT codigo_do_produto, SUM(quantidade) FROM itens_notas_fiscais GROUP BY codigo_do_produto ORDER BY
+      SUM(quantidade) DESC;
+
+Obs:Se quiser pode estipular um valor para inicio na consulta a cima.
+
+    SELECT codigo_do_produto, SUM(quantidade) FROM itens_notas_fiscais GROUP BY codigo_do_produto HAVING SUM(quantidade) > 394000
+      ORDER BY SUM(quantidade) DESC;
