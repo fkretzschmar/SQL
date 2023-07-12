@@ -68,3 +68,13 @@ Obs:Se quiser pode estipular um valor para inicio na consulta a cima.
 
     SELECT codigo_do_produto, SUM(quantidade) FROM itens_notas_fiscais GROUP BY codigo_do_produto HAVING SUM(quantidade) > 394000
       ORDER BY SUM(quantidade) DESC;
+
+#Subconsulta substituindo o HAVING, somando todas embalagens.
+
+    SELECT soma_embalagens.embalagem, soma_embalagem.soma_preco
+    FROM (SELECT embalagem, SUM(preco_de_lista) AS soma_preco FROM tabela_de_produtos GROUP BY embalagem) soma_embalagem
+    WHERE soma_embalagens.soma_preco >= 80;
+
+#Consulta uma View não precida da função HAVING(nome da view vw_soma_embalagens).
+
+    SELECT embalagem, soma_preco FROM vw_soma_embalagens WHERE soma_preco >= 80;
