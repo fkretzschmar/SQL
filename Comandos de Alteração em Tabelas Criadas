@@ -1,0 +1,18 @@
+#Renomear coluna criada.
+
+    ALTER TABLE vendedores
+    RENAME COLUMN data_adimissao TO data_admissao;
+
+
+#Almentar o tamanho da coluna do tipo VARCHAR.
+
+    ALTER TABLE tabela_cliente MODIFY nome(100);
+
+
+#Criando uma Chave Estrangeira.
+
+    ALTER TABLE tabela_de_vendas
+    ADD CONSTRAINT fk_tabela_clientes
+    FOREIGN KEY(cpf) REFERENCES tabela_clientes(cpf);
+
+
