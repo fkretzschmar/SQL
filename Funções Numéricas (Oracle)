@@ -1,0 +1,47 @@
+#(ROUND, TRUNC, FLOOR) - Arredonta.
+
+
+#(CEIL) - Arredonda para cima.
+
+
+#(POWER) - O numero informado elevado a 10.
+
+
+#(EXP) - Número exponencial elevado a enezima potência.
+
+
+#(SQRT) - Raiz Quadrada.
+
+
+#(SIGN(N)) - retorna o sinal de um número. Esta função retornará um dos seguintes: Se número > 0,
+retorna 1. Se número = 0, retorna 0. Se número < 0, retorna -1.
+
+
+#(ABS) - Converte numero negativo para possítivo.
+
+
+#(MOD) - Retorna o resto da divisão de dois números.
+
+
+#(LOG(M, N)) - Logaritimo de base m de n.
+
+
+#(SIN(N)) - Seno de n.
+
+
+#(SINH(N)) - Seno hiperbólico de n.
+
+
+#(TAN(N)) - Tangente de n.
+
+
+#(TANH(N)) - Tangente hiperbólica de n.
+
+
+#(COS(N)) - Cosseno de n.
+
+
+#(COSH(N)) - Cosseno hiperbólico de n.
+
+
+
