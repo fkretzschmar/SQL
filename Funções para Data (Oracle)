@@ -1,0 +1,38 @@
+#(TO_CHAR) - Pega a data armazenada no campo e transforma em um texto.
+=>(01/09/90)
+SELECT nome, TO_CHAR(data_de_nascimento, 'DD MONTH YYYY, DAY') FROM tabela_de_clientes;
+=>Retorn:(01 SETEMBRO 1990, SÁBADO)
+
+
+#(TO_DATE) - Converte o texto armazenado no campo em data.
+
+
+#(SYSDATE) - Grava a hora atual.
+SELECT nome, idade,(SYSDATE - data_de_nascimento)/365 FROM tabela_de_clientes;
+Obs: Verificar a data de nascimento do cliente.
+
+
+#(MONTHS_BETWEEN) - Informamos duas datas e esta função retorna o numero de messes entre essas duas datas,
+                    este resultado pode ser possitivo ou negativo.
+SELECT nome, idade, MONTHS_BETWEEN(SYSDATE, data_de_nascimento)/12 FROM tabela_de_clientes
+
+
+#(ADD_MONTHS) - Pega a data apresentada e adiciona nesses pode ser messes possitivos ou negativos.
+SELECT ADD_MONTHS(SYSDATE, 10) FROM DUAL;
+
+
+#(NEXT_DAY) - Se informarmos a data 06-01-2002 que seria sexta-feita ele vai retornar a data da proxima sexta-feira.
+SELECT NEXT_DAY(SYSDATE, 'SEXTA') FROM DUAL;
+Obs:A sexta seguinte.
+SELECT SYSDATE, NEXT_DAY(SYSDATE, 'SEXTA') FROM DUAL;
+
+
+#(LAST_DAY) - Se informarmos uma data ele vai retornar o ultimo dia do mês daquela data.
+
+
+#(TRUNC) - Tira a hora do campo DATE e deixa apenas a data.
+
+
+#(ROUND) - Arredonda a data, se a data informada estiver antes do dia 15 então ira arredondar para o dia 1,
+            depois do dia 15 ele vai retornar o ultimo dia do mês.
+
