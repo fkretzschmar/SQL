@@ -1,0 +1,18 @@
+#Inserir dados em (produtos) recebendo dados diarios da (tabela_de_produtos_fonte), deixando de lado as que já foram incluidas para não dar erro.
+
+INSERT INTO produtos
+SELECT codigo_do_produto AS codigo,
+nome_do_produto AS descritor,
+sabor,
+tamanho,
+embalagem,
+preco_de_lista AS preco_lista
+FROM tabela_de_produtos_fonte
+WHERE NOT (codigo_do_produto IN(
+SELECT
+P.codigo
+FROM
+produtos P
+INNER JOIN
+tabela_de_produtos_fonte TPF
+ON P.codigo = TPF.codigo_do_produto));
