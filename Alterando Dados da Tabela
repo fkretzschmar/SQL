@@ -1,0 +1,13 @@
+UPDATE tb_produtos SET preco_lista = 5.2, sabor = 'Laranja', Embalagem = 'PET' WHERE produto = '1040107';
+
+
+#REPLACE altera um pedaço de um texto subs por outro.
+UPDATE tb_produtos SET nome = REPLACE(nome, 'Melancia', 'Laranja') where produto = '1040107';
+
+
+#O valor dos produtos que contem Maracuja teve u almento de 10%, vamos alterar o preço de todos os produtos que tem o sabor Maracuja.
+UPDATE tb_produtos SET preco_lista = preco_lista * 1.10 WHERE sabor = 'Maracuja';
+
+#Queremos acrescentar 1 ano à idade de todos os dependentes. O ano virou e precisamos atualizar a tabela.
+UPDATE TAB_DEPENDENTE SET IDADE = IDADE + 1;
+
