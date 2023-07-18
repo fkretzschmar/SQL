@@ -28,6 +28,7 @@
     ON TC.CPF = NF.CPF
     WHERE NF.CPF IS NULL;
 
+
 #Consulta quais são os vendedores que não possui sede no bairro do cliente.
 
     SELECT DISTINCT
@@ -41,6 +42,7 @@
         TABELA_DE_VENDEDORES TV
     ON TV.BAIRRO = TC.BAIRRO;
 
+
 #Consulta entre duas tabelas verificando o bairro dos clientes e vendedores, 
 criando uma coluna que informa se o mesmo é cliente ou vendedor.
 
@@ -48,7 +50,19 @@ criando uma coluna que informa se o mesmo é cliente ou vendedor.
       UNION ALL
     SELECT DISTINCT bairro, 'VENDEDOR' AS ORIGEM FROM tabela_de_vendedores;
 
+
 #Consulta de vendedor que possue sede no mesmo bairro do cliente de maneira dinãmica e menor.
 
     SELECT * FROM tabela_de_clientes WHERE bairro IN (SELECT DISTINCT bairro FROM tabela_de_vendedores);
 
+
+#INNER JOIN entre duas tabelas, porém na tabela_de_vendedores_fonte a matricula tem dois 0 a mais no inicio.
+
+SELECT
+V.MATRICULA AS MATRICULA_VENDEDORES, TVF.MATRICULA AS MATRICULA_FONTE, 
+V.FERIAS AS FERIAS_VENDEDORES, TVF.DE_FERIAS AS FERIAS_FONTE
+FROM
+VENDEDORES V
+INNER JOIN
+TABELA_DE_VENDEDORES_FONTE TVF
+ON V.MATRICULA = SUBSTR(TVF.MATRICULA, 3, 3);
