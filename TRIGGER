@@ -13,8 +13,8 @@ VALUES ('005', '1000889', 12, 10);
 #Seja gerada uma tabela/trigger(tg_tab_faturamento) automaticamente que se atualiza sozinha informando a data da venda e o faturamento do dia.
 
 
-CREATE TRIGGER tg_tab_faturamento
-AFTER INSERT ON itens_notas
+CREATE OR REPLACE TRIGGER tg_tab_faturamento
+AFTER INSERT OR UPDATE OR DELETE ON itens_notas
 BEGIN
 DELETE FROM tab_faturamento;
 INSERT INTO tab_faturamento
