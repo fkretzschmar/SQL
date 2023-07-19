@@ -8,6 +8,14 @@ UPDATE tb_produtos SET nome = REPLACE(nome, 'Melancia', 'Laranja') where produto
 #O valor dos produtos que contem Maracuja teve u almento de 10%, vamos alterar o preço de todos os produtos que tem o sabor Maracuja.
 UPDATE tb_produtos SET preco_lista = preco_lista * 1.10 WHERE sabor = 'Maracuja';
 
+
 #Queremos acrescentar 1 ano à idade de todos os dependentes. O ano virou e precisamos atualizar a tabela.
 UPDATE TAB_DEPENDENTE SET IDADE = IDADE + 1;
+
+
+#Alterando a coluna de uma tabela, com mais de uma chave primaria.
+UPDATE tabela_de_vendedores_fonte SET de_ferias = 0 WHERE matricula IN('00236', '00237');
+UPDATE tabela_de_vendedores_fonte SET de_ferias = 1 WHERE matricula IN('00235', '00238');
+
+
 
