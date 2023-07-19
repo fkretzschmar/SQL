@@ -1,0 +1,8 @@
+#Salvar Mudanças Feitas no Banco de Dados sem Fechar, para outras pessoas visualizarem as mudança que você realizou no banco de dados
+é necessário fechar o sgbd ou realizar o comando abaixo. 
+
+COMMIT;
+
+#Se iniciei novas atividades e fiz alguma coisa de errada, eu posso retornar até o ponto em que dei o COMMIT com o comando abaixo.
+
+ROLLBACK;
