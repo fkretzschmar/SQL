@@ -1,0 +1,16 @@
+Insert into TABELA_DE_VENDEDORES_FONTE (MATRICULA,NOME,PERCENTUAL_COMISSAO,DATA_ADMISSAO,DE_FERIAS,BAIRRO) 
+values ('00235','Marcio Almeida Silva','0,08',to_date('15/08/14','DD/MM/RR'),'0','Tijuca');
+Insert into TABELA_DE_VENDEDORES_FONTE (MATRICULA,NOME,PERCENTUAL_COMISSAO,DATA_ADMISSAO,DE_FERIAS,BAIRRO) 
+values ('00236','Claudia Morais','0,08',to_date('17/09/13','DD/MM/RR'),'1','Jardins');
+Insert into TABELA_DE_VENDEDORES_FONTE (MATRICULA,NOME,PERCENTUAL_COMISSAO,DATA_ADMISSAO,DE_FERIAS,BAIRRO) 
+values ('00237','Roberta Martins','0,11',to_date('18/03/17','DD/MM/RR'),'1','Copacabana');
+Insert into TABELA_DE_VENDEDORES_FONTE (MATRICULA,NOME,PERCENTUAL_COMISSAO,DATA_ADMISSAO,DE_FERIAS,BAIRRO) 
+values ('00238','Pericles Alves','0,11',to_date('21/08/16','DD/MM/RR'),'0','Santo Amaro');
+
+#Ou porem os valores tem que seguir a ordem das colunas criadas.
+
+Insert into TABELA_DE_VENDEDORES_FONTE values
+('00235','Marcio Almeida Silva','0,08',to_date('15/08/14','DD/MM/RR'),'0','Tijuca'),
+('00236','Claudia Morais','0,08',to_date('17/09/13','DD/MM/RR'),'1','Jardins'),
+('00237','Roberta Martins','0,11',to_date('18/03/17','DD/MM/RR'),'1','Copacabana'),
+('00238','Pericles Alves','0,11',to_date('21/08/16','DD/MM/RR'),'0','Santo Amaro');
