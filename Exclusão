@@ -1,0 +1,10 @@
+DELETE FROM produtos WHERE codigo = '1001000';
+
+
+#deletar de produtos todos aqueles que não estão na tabela_de_produtos_fontes.
+
+DELETE FROM produtos P WHERE
+P.codigo IN(
+SELECT P.codigo FROM produtos P LEFT JOIN tabela_de_produtos_fonte TPF
+ON P.codigo = TPF.codigo_do_produto
+WHERE TPF.codigo_do_produto IS NULL);
