@@ -19,3 +19,11 @@ UPDATE tabela_de_vendedores_fonte SET de_ferias = 1 WHERE matricula IN('00235', 
 
 
 
+#Alterando vendedores deixando o campo ferias igual ao da tabela_de_vendedores_fonte
+UPDATE vendedores V SET V.ferias = 
+(SELECT TVF.de_ferias FROM tabela_de_vendedores_fonte TVF
+WHERE V.matricula = SUBSTR(TVF.matricula, 3, 3))
+WHERE EXISTS
+(SELECT 1 FROM tabela_de_vendedores_fonte TVF
+WHERE 
+V.matricula = SUBSTR(TVF.matricula, 3, 3));
