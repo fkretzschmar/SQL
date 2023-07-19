@@ -1,0 +1,34 @@
+#Um tipo especial de procedimento que é executado automaticamente quando uma evento ocorre no banco de dados.
+#Exemplo de eventos: INCLUIR, ALTERAR, EXCLUIR.
+#Executa-los antes ou depois do evento.
+
+
+#Vamos fazer uma TRIGGER que ao inserir informações na tabela notas e itens_notas.
+
+INSERT INTO notas (numero, data_venda, cpf, matricula, imposto)
+VALUES ('005', TO_DATE('2019-01-03', 'YYYY-MM-DD'), '1471156710', '235', 0.1);
+INSERT INTO itens_notas(numero, codigo, quantidade, preco)
+VALUES ('005', '1000889', 12, 10);
+
+#Seja gerada uma tabela/trigger(tg_tab_faturamento) automaticamente que se atualiza sozinha informando a data da venda e o faturamento do dia.
+
+
+CREATE TRIGGER tg_tab_faturamento
+AFTER INSERT ON itens_notas
+BEGIN
+DELETE FROM tab_faturamento;
+INSERT INTO tab_faturamento
+SELECT
+N.data_venda, SUM(ITN.quantidade * ITN.PRECO) AS faturamento
+FROM
+notas N
+INNER JOIN
+itens_notas ITN
+ON N.numero = ITN.numero
+GROUP BY N.data_venda;
+END;
+
+
+
+
+
