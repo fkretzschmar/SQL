@@ -1,6 +1,13 @@
 UPDATE tb_produtos SET preco_lista = 5.2, sabor = 'Laranja', Embalagem = 'PET' WHERE produto = '1040107';
 
 
+#Alterando o valor de todas embalagens LATA
+
+UPDATE TABELA_DE_PRODUTOS 
+SET PRECO_DE_LISTA = PRECO_DE_LISTA * 0.9
+WHERE EMBALAGEM = 'LATA';
+
+
 #REPLACE altera um pedaço de um texto subs por outro.
 UPDATE tb_produtos SET nome = REPLACE(nome, 'Melancia', 'Laranja') where produto = '1040107';
 
