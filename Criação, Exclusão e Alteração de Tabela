@@ -34,6 +34,11 @@ TAMANHO VARCHAR(50),
 SABOR VARCHAR(50),
 PRECO_DE_LISTA SMALLMONEY
 );
+
+ALTER TABLE [TABELA DE CLIENTES] ALTER COLUMN CPF CHAR(11) NOT NULL;
+
+ALTER TABLE [TABELA DE CLIENTES] ADD CONSTRAINT PK_TABELA_CLIENTE
+PRIMARY KEY CLUSTERED (CPF);
 ________________________________________________________________________________________________________________________________
 
 #ORACLE
