@@ -44,7 +44,7 @@ preciso consultar todos sucos que contem Limão.
 
     SELECT embalagem, COUNT(*) FROM tabela_de_produtos WHERE sabor = 'Laranja' GROUP BY embalagem ORDER BY embalagem;
 
-#Consultar dentro de um agrupamento  o maior valor.
+#HAVING Consultar dentro de um agrupamento  o maior valor.
 
     SELECT estado, SUM(limite_de_credito) FROM tabela_de_clientes GROUP BY estado HAVING SUM (limite_de_credito) >= 900000;
 
