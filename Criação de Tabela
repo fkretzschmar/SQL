@@ -1,3 +1,17 @@
+#MySQL
+CREATE DATABASE;
+ou
+CREATE SCHEMA 'sucos2' DEFAUT CHARACTER SET utf8;
+
+________________________________________________________________________________________________________________________________________________
+
+#SQL Server
+
+CREATE DATABASE;
+
+________________________________________________________________________________________________________________________________
+
+
 #campo cidade se não for preenchido nada sera informado Rio de Janeiro.
 #campo data_criacao sera informado a data e hora do momento que foi inserido.
 
