@@ -10,9 +10,24 @@ ________________________________________________________________________________
 CREATE DATABASE SUCOS_VENDAS;
 
 DROP DATABASE SUCO_VENDAS_2;
+
+CREATE TABLE [TABELA DE CLIENTES](
+CPF CHAR(11),
+NOME_COMPLETO VARCHAR(150) ,
+RUA VARCHAR(150),
+COMPLEMENTO VARCHAR(150),
+BAIRRO VARCHAR(150),
+ESTADO CHAR(2),
+CEP CHAR(8),
+DATA_DE_NASCIMENTO DATE,
+IDADE SMALLINT,
+SEXO CHAR(1),
+LIMITE_DE_CREDITO MONEY,
+VOLUME_MINIMO FLOAT,
+PRIMEIRA_COMPRA BIT,);
 ________________________________________________________________________________________________________________________________
 
-
+#ORACLE
 #campo cidade se não for preenchido nada sera informado Rio de Janeiro.
 #campo data_criacao sera informado a data e hora do momento que foi inserido.
 
