@@ -78,3 +78,13 @@ Obs:Se quiser pode estipular um valor para inicio na consulta a cima.
 #Consulta uma View não precida da função HAVING(nome da view vw_soma_embalagens).
 
     SELECT embalagem, soma_preco FROM vw_soma_embalagens WHERE soma_preco >= 80;
+
+
+#CASE seria o IF em SQL
+
+SELECT nome_do_produto, preco_de_lista,
+(CASE WHEN preco_de_lista >= 12 THEN 'PRODUTO CARO'
+	  WHEN preco_de_lista >= 7 AND preco_de_lista < 12 THEN 'PRODUTO EM CONTA'
+	  ELSE 'PRODUTO BARATO' END) AS CLASSIFICACAO
+FROM tabela_de_produtos
+WHERE sabor = 'Manga';
