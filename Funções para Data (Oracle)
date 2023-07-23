@@ -16,6 +16,11 @@ Obs: Verificar a data de nascimento do cliente.
 Ou seja vai estar adicionando 30 dias da data informada.
 DATEADD(DAY, 30, '2022-01-01');
 
+#(DATEDIFF) - Essa função retorna a contagem(como um valor inteiro com sinal) dos limites de datepart especificados 
+cruzados entre os parâmetros especificados startdate e enddate.
+Ou seja ele vai retornar a quantidade de dias entre as duas datas.
+DATEDIFF(DAY, '2022-01-01', '2022-04-12');
+
 
 #(MONTHS_BETWEEN) - Informamos duas datas e esta função retorna o numero de messes entre essas duas datas,
                     este resultado pode ser possitivo ou negativo.
