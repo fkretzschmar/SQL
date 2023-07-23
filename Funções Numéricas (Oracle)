@@ -3,6 +3,10 @@ ROUND - Retorna um valor numérico, arredondado, para o comprimento ou precisão
 SELECT ROUND(32.23332, 2);
 RETORNO: 32.23
 
+CEILING sql server - Essa função retorna o menor inteiro maior que ou igual à expressão numérica especificada.
+SELECT CEILING(32.23332);
+RETORNA:33
+
 
 #(ROUND, TRUNC, FLOOR) - Arredonta.
 
