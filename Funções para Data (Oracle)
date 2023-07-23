@@ -12,14 +12,18 @@ SELECT nome, idade,(SYSDATE - data_de_nascimento)/365 FROM tabela_de_clientes;
 Obs: Verificar a data de nascimento do cliente.
 
 
-#(DATEADD) - Essa função adiciona um número(um inteiro com sinal) a um datepart de uma data de entrada e retorna um valor de data/hora modificado.
+#(DATEADD) sql server - Essa função adiciona um número(um inteiro com sinal) a um datepart de uma data de entrada e retorna um valor de data/hora modificado.
 Ou seja vai estar adicionando 30 dias da data informada.
-DATEADD(DAY, 30, '2022-01-01');
+SELECT DATEADD(DAY, 30, '2022-01-01');
 
-#(DATEDIFF) - Essa função retorna a contagem(como um valor inteiro com sinal) dos limites de datepart especificados 
+#(DATEDIFF) sql server - Essa função retorna a contagem(como um valor inteiro com sinal) dos limites de datepart especificados 
 cruzados entre os parâmetros especificados startdate e enddate.
 Ou seja ele vai retornar a quantidade de dias entre as duas datas.
-DATEDIFF(DAY, '2022-01-01', '2022-04-12');
+SELECT DATEDIFF(DAY, '2022-01-01', '2022-04-12');
+
+#(DATEPART) sql server - Essa função retorna um inteiro que representa o date part especificado do argumento date especificado.
+Ou seja vai retornar o dia do ano entre 1 até 365 dependendo da data informada. 
+SELECT DATEPART (DAY, '2022-01-09');
 
 
 #(MONTHS_BETWEEN) - Informamos duas datas e esta função retorna o numero de messes entre essas duas datas,
