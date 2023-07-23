@@ -7,6 +7,9 @@ CEILING sql server - Essa função retorna o menor inteiro maior que ou igual à
 SELECT CEILING(32.23332);
 RETORNA:33
 
+FLOR -Retorna o maior inteiro menor ou igual à expressão numérica especificada.
+SELECT FLOOR(32.23332);
+RETORNA: 32
 
 #(ROUND, TRUNC, FLOOR) - Arredonta.
 
@@ -14,7 +17,9 @@ RETORNA:33
 #(CEIL) - Arredonda para cima.
 
 
-#(POWER) - O numero informado elevado a 10.
+POWER - Retorna o valor da expressão especificada para a potência indicada.
+SELECT POWER(2,10);
+RETORNA: 1024
 
 
 #(EXP) - Número exponencial elevado a enezima potência.
