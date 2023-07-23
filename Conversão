@@ -1,0 +1,10 @@
+#Realizar uma consulta em uma tabela e na mesma converter a forma de visualizar a data de 102(YYYY-MM-DD) para 103(DD-MM-YYYY).
+
+SELECT CPF,NOME,CONVERT(varchar, CONVERT(date, DATA_DE_NASCIMENTO, 102), 103) AS data_formatada
+FROM TABELA_DE_CLIENTES;
+
+#Alterar o formato da data 102(YYYY-MM-DD) para 103(DD-MM-YYYY)
+
+UPDATE sua_tabela
+SET data_coluna = CONVERT(varchar, CONVERT(date, data_coluna, 102), 103);
+
