@@ -5,13 +5,42 @@ FROM sua_tabela;
 
 
 # SQL Server - Realizar uma consulta em uma tabela e na mesma converter a forma de visualizar a data de 102(YYYY-MM-DD) para 103(DD-MM-YYYY).
-
 SELECT CPF,NOME,CONVERT(varchar, CONVERT(date, DATA_DE_NASCIMENTO, 102), 103) AS data_formatada
 FROM TABELA_DE_CLIENTES;
 
 
 #SQL Server - Alterar o formato da data 102(YYYY-MM-DD) para 103(DD-MM-YYYY)
-
 UPDATE sua_tabela
 SET data_coluna = CONVERT(varchar, CONVERT(date, data_coluna, 102), 103);
 
+
+                                                    SQL Server
+
+Conversão de uma string para um tipo numérico:
+SELECT CAST('123' AS INT) AS numero_inteiro;
+Neste exemplo, estamos convertendo a string '123' para um número inteiro usando CAST. O resultado será a coluna "numero_inteiro" com o valor 123.
+
+
+Conversão de uma string para um tipo decimal:
+SELECT CAST('3.14' AS DECIMAL(5, 2)) AS numero_decimal;
+Neste exemplo, estamos convertendo a string '3.14' para um número decimal com precisão de 5 dígitos
+e 2 casas decimais. O resultado será a coluna "numero_decimal" com o valor 3.14.
+
+
+
+Conversão de um tipo numérico para uma string:
+SELECT CAST(42 AS VARCHAR(10)) AS numero_string;
+Neste exemplo, estamos convertendo o número 42 para uma string com uma largura máxima de 10 caracteres. O resultado será
+a coluna "numero_string" com o valor '42'.
+
+
+
+Conversão de uma data para uma string:
+SELECT CAST(GETDATE() AS VARCHAR(20)) AS data_string;
+Neste exemplo, estamos convertendo a data atual (retornada pela função GETDATE()) para uma string com uma largura 
+máxima de 20 caracteres. O resultado será a coluna "data_string" com a data atual formatada como uma string.
+
+
+
+Conversão de uma string para uma data:
+SELECT CAST('2023-07-23' AS DATE) AS data_convertida;
