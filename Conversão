@@ -16,6 +16,12 @@ SET data_coluna = CONVERT(varchar, CONVERT(date, data_coluna, 102), 103);
 
                                                     SQL Server
 
+
+#Concatenar um VARCHAR com um FLOAT mudando o tipo do float para varchar.
+SELECT nome_do_produto, CONCAT('O preço de lista é: ', CAST(preco_de_lista AS VARCHAR(10))) AS Preco
+FROM tabela_de_produtos;
+
+
 Conversão de uma string para um tipo numérico:
 SELECT CAST('123' AS INT) AS numero_inteiro;
 Neste exemplo, estamos convertendo a string '123' para um número inteiro usando CAST. O resultado será a coluna "numero_inteiro" com o valor 123.
