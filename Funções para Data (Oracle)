@@ -25,6 +25,9 @@ SELECT DATEDIFF(DAY, '2022-01-01', '2022-04-12');
 Ou seja vai retornar o dia do ano entre 1 até 365 dependendo da data informada. 
 SELECT DATEPART (DAY, '2022-01-09');
 
+#(GETDATE) sql server - Retorna o carimbo de data/hora do sistema do banco de dados atual utilizado.
+SELECT GETDATE();
+
 
 #(MONTHS_BETWEEN) - Informamos duas datas e esta função retorna o numero de messes entre essas duas datas,
                     este resultado pode ser possitivo ou negativo.
