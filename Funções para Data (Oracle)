@@ -28,9 +28,15 @@ SELECT DATEPART (DAY, '2022-01-09');
 #(GETDATE) sql server - Retorna o carimbo de data/hora do sistema do banco de dados atual utilizado.
 SELECT GETDATE();
 
+
 #(ISDATE) sql server - Retornará 1 se a expressão for um valor datetime, válido; caso contrário, 0.
 Como o mês de fevereiro vai até o dia 28 o exemplo abaixo ira retornar 0.
 SELECT ISDATE('2022-02-31');
+
+
+DATETIMEFROMPARTS sql server - Essa função retorna um valor datetime para os argumentos de data e hora especificados.
+DATETIMEFROMPARTS(Year, Month, Day, Hour, Minute, Seconds, Milliseconds)
+SELECT DATETIMEFROMPARTS(2022,12,14,15,34,22,30);
 
 
 #(MONTHS_BETWEEN) - Informamos duas datas e esta função retorna o numero de messes entre essas duas datas,
