@@ -79,3 +79,14 @@ WHERE EXISTS
 (SELECT 1 FROM tabela_de_vendedores_fonte TVF
 WHERE 
 V.MATRICULA = SUBSTR(TVF.MATRICULA, 3, 3));
+
+
+#INNER JOIN entre duas tabelas para verificar o nome e agrupando a quantidade de vendas realizada pelos mesmo.
+
+SELECT NF.matricula, TV.nome, COUNT(*) AS  numero_notas
+FROM
+notas_fiscais NF
+INNER JOIN
+tabela_de_vendedores TV
+ON NF.matricula = TV.matricula
+GROUP BY NF.matricula, TV.nome;
