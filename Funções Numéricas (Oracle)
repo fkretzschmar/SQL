@@ -1,3 +1,9 @@
+
+ROUND - Retorna um valor numérico, arredondado, para o comprimento ou precisão especificados.
+SELECT ROUND(32.23332, 2);
+RETORNO: 32.23
+
+
 #(ROUND, TRUNC, FLOOR) - Arredonta.
 
 
