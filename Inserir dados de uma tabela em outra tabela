@@ -1,0 +1,8 @@
+# SQL Server
+#Comando para inserir dados de uma tabela para outra, lembrando que o nome tem que esta igual pra isso utilizamos o AS, não pode ter 
+a chave primaria se repetindo para isso utilizamos o <>.
+
+INSERT INTO produtos SELECT codigo_do_produto AS codigo, nome_do_produto AS DESCRITOR, sabor,
+tamanho, embalagem, preco_de_lista as preco_lista
+FROM sucos_frutas.DBO.tabela_de_produtos
+WHERE codigo_do_produto <> '1040107';
