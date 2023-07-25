@@ -30,6 +30,15 @@ UPDATE tabela_de_vendedores_fonte SET de_ferias = 0 WHERE matricula IN('00236', 
 UPDATE tabela_de_vendedores_fonte SET de_ferias = 1 WHERE matricula IN('00235', '00238');
 
 
+# INNER JOIN Alterar a tabela A para ter os mesmos dados da B.
+UPDATE A SET A.preco_lista = B.preco_de_lista	
+FROM 
+produtos A
+INNER JOIN
+sucos_frutas.dbo.tabela_de_produtos B
+ON A.codigo = B.codigo_do_produto;
+
+
 
 #Alterando vendedores deixando o campo ferias igual ao da tabela_de_vendedores_fonte, sincronizando as duas.
 UPDATE vendedores V SET V.ferias = 
