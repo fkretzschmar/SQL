@@ -1,8 +1,12 @@
 DELETE FROM produtos WHERE codigo = '1001000';
 
+#Deletar todos da tabela que possuem no nome descritos Sabor dos Alpes e que seja do tamanho 1 litro.
+(Sabor dos Alpes - 1 Litro - Manga)
+DELETE FROM produtos WHERE SUBSTRING([descritor],1,15) = 'Sabor dos Alpes'
+AND tamanho = '1 Litro';
+
 
 #deletar de produtos todos aqueles que não estão na tabela_de_produtos_fontes.
-
 DELETE FROM produtos P WHERE
 P.codigo IN(
 SELECT P.codigo FROM produtos P LEFT JOIN tabela_de_produtos_fonte TPF
