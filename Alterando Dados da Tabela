@@ -11,6 +11,11 @@ WHERE EMBALAGEM = 'LATA';
 #REPLACE altera um pedaço de um texto subs por outro.
 UPDATE tb_produtos SET nome = REPLACE(nome, 'Melancia', 'Laranja') where produto = '1040107';
 
+                                 Outro Exemplo
+(Light - 350 ml - Melância)
+UPDATE tabela_produtos SET descritor = REPLACE(descritor, '350 ml', '550 ml'), tamanho = '550 ml'
+WHERE tamanho = '350 ml';
+
 
 #O valor dos produtos que contem Maracuja teve um almento de 10%, vamos alterar o preço de todos os produtos que tem o sabor Maracuja.
 UPDATE tb_produtos SET preco_lista = preco_lista * 1.10 WHERE sabor = 'Maracuja';
