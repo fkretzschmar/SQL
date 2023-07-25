@@ -1,9 +1,24 @@
 DELETE FROM produtos WHERE codigo = '1001000';
 
+__________________________________________________________________________________
+
 #Deletar todos da tabela que possuem no nome descritos Sabor dos Alpes e que seja do tamanho 1 litro.
 (Sabor dos Alpes - 1 Litro - Manga)
 DELETE FROM produtos WHERE SUBSTRING([descritor],1,15) = 'Sabor dos Alpes'
 AND tamanho = '1 Litro';
+
+
+#Ao realizar o comando a cima, foi constatado que ainda possui dados da tabela de produtos conforme comando abaixo,
+verificando todos os codigos que não estão na outra tabela.
+SELECT * FROM produtos
+WHERE codigo NOT IN (SELECT codigo_do_produto FROM sucos_frutas.dbo.tabela_de_produtos);
+
+
+#Então deletamos todos os codigos que não estão na outra tabela.
+DELETE FROM produtos
+WHERE codigo NOT IN (SELECT codigo_do_produto FROM sucos_frutas.dbo.tabela_de_produtos);
+
+__________________________________________________________________________________________________
 
 
 #deletar de produtos todos aqueles que não estão na tabela_de_produtos_fontes.
