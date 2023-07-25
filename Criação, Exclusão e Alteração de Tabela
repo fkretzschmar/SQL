@@ -23,6 +23,13 @@ SIZE = 10,
 MAXSIZE = 50,
 FILEGROWTH = 5);
 
+
+#Alterar o tamanho do varchar criado.
+
+ALTER TABLE tabela_de_vendas
+ALTER COLUMN matricula VARCHAR(5) NOT NULL;
+
+
 ___________________________________________________________________________
 
 #SQL Server
