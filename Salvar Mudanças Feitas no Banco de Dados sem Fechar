@@ -1,3 +1,9 @@
+#SQL Server - Bloquear a tabela para realizar operações sensíveis, aonde outro usuario não podera realizar alterações apenas você com o 
+comando abaixo.
+
+ BEGIN TRANSACTION;
+
+
 #Salvar Mudanças Feitas no Banco de Dados sem Fechar, para outras pessoas visualizarem as mudança que você realizou no banco de dados
 é necessário fechar o sgbd ou realizar o comando abaixo. 
 
