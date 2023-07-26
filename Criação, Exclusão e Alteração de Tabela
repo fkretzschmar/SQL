@@ -5,7 +5,7 @@ CREATE SCHEMA 'sucos2' DEFAUT CHARACTER SET utf8;
 
 ________________________________________________________________________________________________________________________________________________
 
-                                  #SQL Server
+#SQL Server
 
 #Auto incremento
 CREATE TABLE tab_identity
