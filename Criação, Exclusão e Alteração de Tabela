@@ -5,7 +5,14 @@ CREATE SCHEMA 'sucos2' DEFAUT CHARACTER SET utf8;
 
 ________________________________________________________________________________________________________________________________________________
 
-#SQL Server
+                                  #SQL Server
+
+#Auto incremento
+CREATE TABLE tab_identity
+(ID INT IDENTITY(1,1) NOT NULL,
+DESCRITOR VARCHAR (20) NULL);
+
+
 
 #Criando banco de dados atravez de comandos.
 
