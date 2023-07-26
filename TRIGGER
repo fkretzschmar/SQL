@@ -1,3 +1,4 @@
+#Oracle
 #Um tipo especial de procedimento que é executado automaticamente quando uma evento ocorre no banco de dados.
 #Exemplo de eventos: INCLUIR, ALTERAR, EXCLUIR.
 #Executa-los antes ou depois do evento.
@@ -28,7 +29,30 @@ ON N.numero = ITN.numero
 GROUP BY N.data_venda;
 END;
 
+________________________________________________________________________________________________
+
+#SQL Server
 
 
+
+CREATE TRIGGER TG_ITENS_VENDIDOS
+ON [dbo].[TABELA_DE_ITENS_VENDIDOS]
+AFTER INSERT,UPDATE, DELETE
+AS
+BEGIN
+DELETE FROM TAB_FATURAMENTO;
+
+INSERT INTO TAB_FATURAMENTO
+SELECT
+TV.DATA_VENDA,
+SUM(TIV.QUANTIDADE * TIV.PRECO) AS TOTAL_VENDA
+FROM
+TABELA_DE_VENDAS TV
+INNER JOIN
+TABELA_DE_ITENS_VENDIDOS TIV
+ON TV.NUMERO = TIV.NUMERO
+GROUP BY
+TV.DATA_VENDA;
+END;
 
 
