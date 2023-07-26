@@ -7,10 +7,11 @@ ________________________________________________________________________________
 
 #SQL Server
 
-#Auto incremento
+#Auto incremento, data local.
 CREATE TABLE tab_identity
 (ID INT IDENTITY(1,1) NOT NULL,
-DESCRITOR VARCHAR (20) NULL);
+DESCRITOR VARCHAR (20) NULL,
+DATA_CRIACAO DATE DEFAULT GETDATE());
 
 
 
