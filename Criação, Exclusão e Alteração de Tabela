@@ -7,7 +7,7 @@ ________________________________________________________________________________
 
 #SQL Server
 
-#Auto incremento, data local.
+#Auto incremento, SE NÃO FOR INFORMADO A DATA AO INSERIR SERA  ATRIBUIDO A data local.
 CREATE TABLE tab_identity
 (ID INT IDENTITY(1,1) NOT NULL,
 DESCRITOR VARCHAR (20) NULL,
