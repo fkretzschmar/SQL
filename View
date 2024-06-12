@@ -1,3 +1,12 @@
+#Exemplo View
+
+CREATE VIEW matricula_com_sigilo
+(
+SELECT * FROM matricula
+)
+
+
+
 #Criando uma View nome da view: vw_soma_embalagens.
 
     CREATE VIEW vw_soma_embalagens AS
