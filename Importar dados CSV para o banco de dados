@@ -1,0 +1,9 @@
+
+
+
+
+
+COPY disciplinas(id_disciplina, nome, emenda)                                     \\Colunas
+FROM 'C:\disciplinas.csv'                                                         \\Local Arquivo
+DELIMITER ','                                                                     \\Delimitador
+csv header                                                                        \\iguinorar a primeira linha que contem os nomes das colunas
