@@ -88,3 +88,39 @@ SELECT nome_do_produto, preco_de_lista,
 	  ELSE 'PRODUTO BARATO' END) AS CLASSIFICACAO
 FROM tabela_de_produtos
 WHERE sabor = 'Manga';
+
+- - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - -  DIO
+*Criar uma coluna com base no salário atribuindo level
+
+SELECT Fname, Salary,
+	CASE
+		WHEN Salary > 39000 THEN 'Executive'
+		WHEN Salary > 29000 THEN 'Senior'
+		WHEN Salary > 19000 THEN 'Pleno'
+		ELSE 'N/A'
+	END AS Employee_level
+	FROM employee e
+	ORDEN BY employee_level;
+
+*Esconder Salário
+
+SELECT Fname,
+	CASE
+		WHEN Salary > 39000 THEN 'Executive'
+		WHEN Salary > 29000 THEN 'Senior'
+		WHEN Salary > 19000 THEN 'Pleno'
+		ELSE 'N/A'
+	END AS Employee_level
+	FROM employee e
+	ORDEN BY employee_level;
+
+
+*Mudar o nome no sexo
+
+SELECT Fname,
+	CASE
+		WHEN Sex = 'M' THEN 'Masculino'
+		WHEN Sex = 'F' THEN 'Feminino'
+		ELSE Sex
+		END AS Nome_Coluna
+	FROM Employee e;
